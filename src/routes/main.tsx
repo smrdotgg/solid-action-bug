@@ -15,7 +15,7 @@ export default function Main({children}:{children?:JSX.Element}) {
         <input type="number" name="max" value={10} hidden class="bg-blue-100 text-black" />
         <button type="submit" class="bg-blue-100 p-2 text-xl font-bold"> count to 10</button>
       </form>
-      <Show when={sub.result}>
+      <Show when={sub.result} fallback={sub.pending ? "Loading..." : <></>}>
         <h1>{sub.result!().content}</h1>
       </Show>
       {children}
