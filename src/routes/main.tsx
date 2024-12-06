@@ -12,7 +12,8 @@ export default function Main({children}:{children?:JSX.Element}) {
   return (
     <main class="w-full p-4 space-y-2">
       <form method="post" action={countAction}>
-        <input type="number" name="max" class="bg-blue-100 text-black" />
+        <input type="number" name="max" value={10} hidden class="bg-blue-100 text-black" />
+        <button type="submit" class="bg-blue-100 p-2 text-xl font-bold"> count to 10</button>
       </form>
       <Show when={sub.result}>
         <h1>{sub.result!().content}</h1>
